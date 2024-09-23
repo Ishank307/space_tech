@@ -1,0 +1,263 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Background and Colors */
+body {
+    background: linear-gradient(135deg, #1a1a1a, #3b0a78);
+    color: white;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4b00ff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: radial-gradient(circle at bottom right, #2e0a62, #1a1a1a);
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    margin-top: 20px;
+}
+
+.search-box input {
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    width: 300px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #4b00ff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #7d00ff;
+}
+
+/* Article Grid Section */
+.articles {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.articles h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.article {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.article img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.article h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.article p {
+    font-size: 1em;
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #000;
+    text-align: center;
+}
+
+footer p {
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #4b00ff;
+}
+
+/* Search Results */
+.results {
+    padding: 20px;
+    text-align: center;
+}
+
+.article {
+    background-color: #222;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.article h3 {
+    color: #fff;
+}
+
+.article p {
+    color: #ccc;
+}
+
+
+
+
+  /* Responsive Styles for Mobile Devices */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .mobile-menu ul li {
+      border-bottom: 1px solid #575757;
+    }
+
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      /* Logo Styling */
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      /* Hamburger Menu Icon */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      
+      .hamburger span {
+        background-color: white;
+        height: 3px;
+        width: 25px;
+        margin: 5px 0;
+      }
+      
+      /* Mobile Menu Styling */
+      .mobile-menu {
+        display: none;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border: 1px solid white;
+      }
+      
+      .mobile-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .mobile-menu ul li {
+        padding: 15px;
+        text-align: center;
+      }
+      
+      .mobile-menu ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+      }
+      
+      /* Hover effect for menu items */
+      .mobile-menu ul li a:hover {
+        background-color: #575757;
+      }
+      
+  }
+  

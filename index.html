@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay updated with the latest space technology news, reviews, and articles.">
+    <title>Space Tech News</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+  <header>
+    <div class="navbar">
+      <div class="logo">YourLogo</div>
+      <div class="hamburger" id="hamburger">
+        <!-- Hamburger Icon -->
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="mobile-menu" class="mobile-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+   <!-- Search Section in HTML -->
+<section class="hero">
+    <h1>Stay Updated on the Latest Space Tech Innovations</h1>
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search for latest space news">
+        <button onclick="searchArticles()">Search</button>
+    </div>
+</section>
+
+<!-- Search Results Section -->
+<section class="results">
+    <div id="search-results"></div>
+</section>
+
+<script>
+// JavaScript for handling the search
+async function searchArticles() {
+    const query = document.getElementById('search-input').value;
+
+    try {
+        const response = await fetch(`http://localhost:5000/search?q=${query}`);
+        const articles = await response.json();
+
+        const resultsDiv = document.getElementById('search-results');
+        resultsDiv.innerHTML = '';  // Clear previous results
+
+        if (articles.length === 0) {
+            resultsDiv.innerHTML = '<p>No results found</p>';
+        } else {
+            articles.forEach(article => {
+                resultsDiv.innerHTML += `
+                    <div class="article">
+                        <h3>${article.title}</h3>
+                        <p>${article.description}</p>
+                    </div>
+                `;
+            });
+        }
+    } catch (error) {
+        console.error('Error fetching search results:', error);
+    }
+}
+</script>
+
+
+    <!-- Latest Articles Section -->
+    <section class="articles">
+        <h2>Latest Articles</h2>
+        <div class="article-grid">
+            <div class="article">
+                <img src="https://via.placeholder.com/300" alt="Space News 1">
+                <h3>SpaceX Launch Success</h3>
+                <p>SpaceX's latest mission to the ISS was a groundbreaking success, advancing space tech.</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/300" alt="Space News 2">
+                <h3>NASA's New Rover</h3>
+                <p>NASA unveiled its new autonomous Mars rover equipped with the latest AI technology.</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/300" alt="Space News 3">
+                <h3>Satellite Breakthrough</h3>
+                <p>A new communication satellite promises faster internet access for remote locations.</p>
+            </div>
+        </div>
+    </section>
+    <script src ="js/server.js"></script>
+    <script src="js/index.js"></script>
+    <script src="package-lock.json"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Space Tech News. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
